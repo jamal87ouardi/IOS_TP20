@@ -9,7 +9,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             TextField("Entrez la nuité", text: $nuite)
-                .padding()
+                
             
             Text("choisir le type de chambre")
                 .padding(.top, 30)
@@ -20,7 +20,7 @@ struct ContentView: View {
                 Text("Multiple").tag("Multiple")
             }
             .pickerStyle(SegmentedPickerStyle())
-            .padding()
+            
             
             Button(action: {
                 
@@ -33,9 +33,11 @@ struct ContentView: View {
                     .foregroundColor(.white)
                     .cornerRadius(8)
             }
+            .padding(.top, 30)
             
             Text(resultText)
                 .padding()
+                .foregroundColor(Color.green)
             
             Spacer()
         }
