@@ -1,15 +1,18 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var textInput: String = ""
+    @State private var nuite: String = ""
     @State private var selectedOption: String = "Simple"
     
     @State private var resultText: String = ""
     
     var body: some View {
         VStack {
-            TextField("Entrez la nuité", text: $textInput)
+            TextField("Entrez la nuité", text: $nuite)
                 .padding()
+            
+            Text("choisir le type de chambre")
+                .padding(.top, 30)
             
             Picker(selection: $selectedOption, label: Text("Choisissez une option")) {
                 Text("Simple").tag("Simple")
@@ -22,7 +25,7 @@ struct ContentView: View {
             Button(action: {
                 
                 
-                resultText = "Texte saisi : \(textInput), Option sélectionnée : \(selectedOption)"
+                resultText = "Texte saisi : \(nuite), Option sélectionnée : \(selectedOption)"
             }) {
                 Text("Valider")
                     .padding()
